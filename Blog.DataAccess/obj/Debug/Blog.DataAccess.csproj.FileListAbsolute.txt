@@ -1,0 +1,5 @@
+D:\Mahendra Workspace\Old backup\Projects\BlogApplication\Blog.DataAccess\bin\Debug\Blog.DataAccess.dll
+D:\Mahendra Workspace\Old backup\Projects\BlogApplication\Blog.DataAccess\bin\Debug\Blog.DataAccess.pdb
+D:\Mahendra Workspace\Old backup\Projects\BlogApplication\Blog.DataAccess\obj\Debug\Blog.DataAccess.csprojResolveAssemblyReference.cache
+D:\Mahendra Workspace\Old backup\Projects\BlogApplication\Blog.DataAccess\obj\Debug\Blog.DataAccess.dll
+D:\Mahendra Workspace\Old backup\Projects\BlogApplication\Blog.DataAccess\obj\Debug\Blog.DataAccess.pdb

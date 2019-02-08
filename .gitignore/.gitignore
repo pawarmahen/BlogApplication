@@ -1,5 +1,4 @@
-#Ignore folder named 'bin'
+*.dll
 bin/
-
-#Ignore folder named 'obj'
 obj/
+packages/
