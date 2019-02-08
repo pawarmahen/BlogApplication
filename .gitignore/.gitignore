@@ -1,4 +1,6 @@
-*.dll
-bin/
-obj/
-packages/
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
