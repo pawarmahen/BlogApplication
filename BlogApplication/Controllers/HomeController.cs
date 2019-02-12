@@ -13,5 +13,10 @@ namespace BlogApplication.Controllers
         {
             return View();
         }
+
+        public ActionResult GetArticles()
+        {
+            return View();
+        }
     }
 }
