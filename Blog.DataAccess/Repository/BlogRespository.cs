@@ -13,9 +13,9 @@ namespace Blog.DataAccess.Repository
         internal BlogContext _blogContext;
         internal DbSet<TEntity> _dbSet;
 
-        public BlogRespository(string connectionString)
+        public BlogRespository()
         {
-            _blogContext = new BlogContext(connectionString);
+            _blogContext = new BlogContext();
             _dbSet = _blogContext.Set<TEntity>();
         }
 

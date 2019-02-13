@@ -5,7 +5,7 @@ namespace Blog.DataAccess.Data.Context
 {
     internal class BlogContext : DbContext
     {
-        internal BlogContext(string connectionString) : base(connectionString)
+        internal BlogContext() : base(@"Data Source=ASEN-L-ANANDK\SQLEXPRESSDEV;Initial Catalog=BlogApplication;User ID=sa;Password=Abcd$123")
         {
             Database.SetInitializer(new BlogInitializer());
         }
