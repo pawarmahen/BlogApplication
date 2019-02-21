@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Blog.DataAccess.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,21 @@ namespace BlogApplication.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            ArticlePage objAct = new ArticlePage()
+            {
+                Author = "",
+                Body = "",
+                Comments = new List<ArticleComments>(),
+                CreatedBy = "",
+                CreatedOn = DateTime.Now,
+                Description = "",
+                Id = 1,
+                Title = "Articles",
+                UpdatedBy = "",
+                UpdatedOn = DateTime.Now
+
+            };
+            return View(objAct);
         }
 
         public ActionResult GetArticles()
