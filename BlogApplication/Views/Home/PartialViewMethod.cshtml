@@ -17,17 +17,31 @@
     $(document).ready(function () {
         $("#addComment").click(function () {
             var comment = $("#commentBox").val();
-            console.log('Comment')
+            //console.log('Comment')
             $.ajax({
                 url: "/Home/PartialViewMethod",
                 type: 'POST',
                 dataType: "json",
                 data: { 'comment': { 'Comment': comment} }
                 //success: function (response) {
-                   
                 //}
-
             })
         });
     });
+
+        
+    //    $.ajax({
+    //        type:"GET",
+    //        datatype:"json",
+    //        async:false,
+    //        url:'ref/list.json',
+    //        success:function(data){
+    //       // alert("Welcome "+data.password+data.loginid);
+    //        console.log(data.password);
+
+    //    $('#uname').html(data.loginid);
+    //    $('#pword').html(data.password);
+    //}
+
+    //    });
 </script>

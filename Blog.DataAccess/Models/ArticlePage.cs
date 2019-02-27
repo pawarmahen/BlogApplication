@@ -19,5 +19,7 @@ namespace Blog.DataAccess.Models
         public ArticleComments SimpleComment { get; set; }
 
         public ICollection<ArticleComments> Comments { get; set; }
+
+       
     }
 }

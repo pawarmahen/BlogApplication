@@ -52,6 +52,7 @@
     <Compile Include="Data.Context\BlogContext.cs" />
     <Compile Include="Data.Context\BlogInitializer.cs" />
     <Compile Include="Models\ArticleComments.cs" />
+    <Compile Include="Models\ArticleList.cs" />
     <Compile Include="Models\ArticlePage.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

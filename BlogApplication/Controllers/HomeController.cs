@@ -1,16 +1,18 @@
 ﻿using Blog.DataAccess.Models;
+using BlogApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace BlogApplication.Controllers
 {
     public class HomeController : Controller
     {
         private static ArticlePage _page = new ArticlePage();
-        
+
         // GET: Home
         public ActionResult Index()
         {
@@ -57,10 +59,104 @@ namespace BlogApplication.Controllers
             //_page.Comments.Add(comment);
             return "Success";
         }
-        public ActionResult GetArticles()
+        [HttpGet]
+        public ActionResult GetArticlesList()
         {
-            return View();
+            ListOfArticlesViewModel listobj = new ListOfArticlesViewModel
+            {
+                ArticlPageList = GetListOfArticles()
+            };
+            listobj.CurrentArticle = listobj.ArticlPageList.First();
+            return View(listobj);
         }
 
+        private ICollection<ArticlePage> GetListOfArticles()
+        {
+            return new List<ArticlePage>
+            {
+            new ArticlePage
+                   {
+                    Author="",
+                    Body="",
+                    Comments=new List<ArticleComments>(),
+                    CreatedBy="",
+                    CreatedOn=DateTime.Now,
+                    Description="",
+                    Id=2,
+                    Image=new Uri(""),
+                   // SimpleComment=,
+                    Title="",
+                    UpdatedBy="",
+                    UpdatedOn=DateTime.Now
+
+
+                   },
+             new ArticlePage
+                   {
+                    Author="",
+                    Body="",
+                    Comments=new List<ArticleComments>(),
+                    CreatedBy="",
+                    CreatedOn=DateTime.Now,
+                    Description="",
+                    Id=3,
+                    Image=new Uri(""),
+                   // SimpleComment=,
+                    Title="",
+                    UpdatedBy="",
+                    UpdatedOn=DateTime.Now
+
+                   },
+              new ArticlePage
+                   {
+                    Author="",
+                    Body="",
+                    Comments=new List<ArticleComments>(),
+                    CreatedBy="",
+                    CreatedOn=DateTime.Now,
+                    Description="",
+                    Id=4,
+                    Image=new Uri(""),
+                   // SimpleComment=,
+                    Title="",
+                    UpdatedBy="",
+                    UpdatedOn=DateTime.Now
+
+                   },
+               new ArticlePage
+                   {
+                    Author="",
+                    Body="",
+                    Comments=new List<ArticleComments>(),
+                    CreatedBy="",
+                    CreatedOn=DateTime.Now,
+                    Description="",
+                    Id=5,
+                    Image=new Uri(""),
+                   // SimpleComment=,
+                    Title="",
+                    UpdatedBy="",
+                    UpdatedOn=DateTime.Now
+
+                   },
+                new ArticlePage
+                   {
+                    Author="",
+                    Body="",
+                    Comments=new List<ArticleComments>(),
+                    CreatedBy="",
+                    CreatedOn=DateTime.Now,
+                    Description="",
+                    Id=6,
+                    Image=new Uri(""),
+                   // SimpleComment=,
+                    Title="",
+                    UpdatedBy="",
+                    UpdatedOn=DateTime.Now
+
+                   },
+
+            };
+        }
     }
 }
