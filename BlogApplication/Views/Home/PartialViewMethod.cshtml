@@ -1,0 +1,33 @@
+﻿@model Blog.DataAccess.Models.ArticleComments
+
+
+@*<h4>ArticleComments</h4>
+<hr />*@
+<div class="row">
+    @Html.TextBoxFor(model => Model.Comment, new { @id = "commentBox" })
+    @*@Html.ValidationMessageFor(model => model.Comment)*@
+    <button id="addComment" class="btn btn-primary">Add Comment</button>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#addComment").click(function () {
+            var comment = $("#commentBox").val();
+            console.log('Comment')
+            $.ajax({
+                url: "/Home/PartialViewMethod",
+                type: 'POST',
+                dataType: "json",
+                data: { 'comment': { 'Comment': comment} }
+                //success: function (response) {
+                   
+                //}
+
+            })
+        });
+    });
+</script>

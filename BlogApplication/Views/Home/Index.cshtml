@@ -2,5 +2,87 @@
 @{
     ViewBag.Title = "Index";
 }
-<h2>@Model.Title</h2>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+    <div class="well">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row hidden-md hidden-lg"><h1 class="text-center">TITULO LARGO DE UNA INVESTIGACION cualquiera</h1></div>
 
+                <div class="pull-left col-md-4 col-xs-12 thumb-contenido"><img class="center-block img-responsive" src="@Model.Image.AbsoluteUri"/></div>
+                <div class="">
+                    <h1 class="hidden-xs hidden-sm">@Model.Title</h1>
+                    <hr>
+                    <small>@Html.Label("Created Date :")
+                    @Html.DisplayFor(m => m.CreatedOn)</small><br>
+                    <small><strong>@Html.Label("Author :")
+                    @Html.DisplayFor(m => m.Author)</strong></small>
+                    <hr>
+                    <p class="text-justify">
+                        @*@Html.Label("Body:")*@
+                        @Html.Raw(Model.Body)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("~/Views/Home/PartialViewMethod.cshtml", Model.SimpleComment)
+@*<div class="row">ssss
+    <div class="col-md-12 text-left">
+        @Html.Label("Comment")
+        @Html.TextBoxFor(m=>m.Comments)
+        <button type="submit">submit</button>
+    </div>
+</div>*@
+@foreach(var comment in Model.Comments)
+{
+    <div class="row">
+        <div class="col-md-12 text-left">
+            @comment.Comment
+        </div>
+    </div>
+}
+@*<div class="container">
+    <div class="row">*@
+        @*<div class="col-md-12">
+            @Html.Label("Author :")
+            @Html.DisplayFor(m => m.Author)
+        </div>
+        <div class="col-md-12">
+            @Html.Label("Body :")
+            @Html.DisplayFor(m => m.Body)
+        </div>*@
+        @*<div class="col-md-12">
+            @Html.Label("Comments :")
+            @Html.DisplayFor(m => m.Comments)
+        </div>*@
+        @*<div class="col-md-12">
+            @Html.Label("CreatedBy :")
+            @Html.DisplayFor(m => m.CreatedBy)
+        </div>
+        <div class="col-md-12">
+            @Html.Label("Created Date :")
+            @Html.DisplayFor(m => m.CreatedOn)
+        </div>
+        <div class="col-md-12">
+            @Html.Label("Description :")
+            @Html.DisplayFor(m => m.Description)
+        </div>
+        <div class="col-md-12">
+            @Html.Label("Id :")
+            @Html.DisplayFor(m => m.Id)
+        </div>
+        <div class="col-md-12">
+            @Html.Label("UpdatedBy :")
+            @Html.DisplayFor(m => m.UpdatedBy)
+        </div>
+        <div class="col-md-12">
+            @Html.Label("UpdatedOn :")
+            @Html.DisplayFor(m => m.UpdatedOn)
+        </div>
+       </div>
+</div>*@
